@@ -1,12 +1,9 @@
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import UserInfo from "./UserInfo";
+import CurrentDate from "./CurrentDate";
 
 const Header = () => {
-  const date = new Date().toLocaleDateString("bn-BD", {
-    dateStyle: "full",
-  });
-
   return (
     <header className="relative w-full bg-white py-3 shadow-sm">
       <div className="relative max-w-7xl mx-auto px-4">
@@ -25,7 +22,7 @@ const Header = () => {
               <span className="text-2xl font-bold tracking-tight text-red-700">
                 Bangla News 24
               </span>
-              <span className="text-xs text-neutral-500 font-medium">{date}</span>
+              <CurrentDate />
             </div>
           </div>
 
@@ -33,8 +30,12 @@ const Header = () => {
         
         </div>
       </div>
-      <UserInfo/>
-      <NavLinks/>
+     <div className="flex items-center justify-between">
+      <div></div>
+       <NavLinks/>
+       <UserInfo/>
+  
+     </div>
     </header>
   );
 };
